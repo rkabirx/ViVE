@@ -1,0 +1,32 @@
+Programs to run:
+
+1) python3 CANBus.py
+
+2) python3 Gateway.py (Running gateway separately because both ABS & TCS use case have this in common)
+
+the receiver sockets calling:
+3) python3 ABS_servers.py
+
+the sender sockets calling:
+4) python3 ABS_clients.py
+
+press Brake_pedal GUI button to apply brake to activate ABS (default OFF).
+For optimization, press auto random button.
+Hydraulic_modulator will generate a GUI output for each value of the cycle to indicate ABS activation
+
+If oserror occurs, type "sudo pkill python" in terminal and run again
+
+
+Rafiul's flow in code-
+        WheelSpeed_sensor ->
+                                -> ABS_recv ->		  -> Hydraulic_modulator
+              Brake_pedal ->                    ->  ABS_process
+                             ADAS -> CANBus ->	         -> CANBus -> Gateway 
+
+
+
+ADAS -- Provide Vehicle speed
+CanBus -- Pass vehicle speed to ABS_process.py
+ABS_recv -- Takes Wheel speed and brake pedal position   # Calls function of ABS_process.py
+ABS_process -- Calculate slip rate and pressure change and send it to Hydraulic Modulator
+Hydraulic Modulator -- Receives updated pressure from ABS

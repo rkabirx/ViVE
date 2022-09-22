@@ -1,0 +1,17 @@
+Python files to ABS, TCS and RT+RTC:
+
+Run ABS_servers.py 	# to run ABS_recv.py & ABS_process.py & Hydraulic_modulator.py  	# The receiver side
+
+Run RT_servers.py 	# to run ABS_process.py & Torque_sensor.py & Angle_sensor.py
+
+Run TCS_servers.py 	# to run TCS_recv.py & TCS_process.py & ECM.py & Instrument_cluster.py
+
+Run CANBus.py
+
+Run Gateway.py
+
+Run All_Clients.py to run - TCS_clients.py & python3 ABS_clients.py & python3 RT_clients.py
+	# ABS_clients.py runs WheelSpeed_sensor.py, ADAS.py and Brake_pedal.py
+	# TCS_clients.py runs WheelSpeed_sensor.py, ADAS.py, TCS_switch.py, Acc_pedal
+	# RT_clients.py runs Angle_sensor, ABS_process, Torque_sensor
+
