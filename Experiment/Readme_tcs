@@ -1,0 +1,30 @@
+Programs to run:
+
+1) python3 CANBus_5.py
+
+2) python3 Gateway.py (Running gateway separately because both ABS & TCS use case have this in common)
+
+the receiver sockets calling:
+3) python3 TCS_servers.py
+
+the sender sockets calling:
+4) python3 TCS_clients.py
+
+
+press Acc pedal GUI button to apply acceleration to activate traction control (default OFF)
+For optimization, press auto random button.
+
+you can also press turn ON or OFF TCS switch as necessary (default ON)
+
+ECM will generate a GUI output for each value of the cycle to indicate traction control activation
+
+If oserror occurs, type "sudo pkill python" in terminal and run again
+
+Rafiul's flow in code-
+
+        WheelSpeed_sensor ->
+             TCS_switch   ->   TCS_recv ->
+                Acc_pedal ->                ->  TCS_process -> CANBUs -> ECM
+                         ADAS -> CANBus ->
+
+

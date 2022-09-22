@@ -1,0 +1,19 @@
+Programs to run: 
+
+1st the receiver sockets:
+
+python3 CANBus.py
+python3 ABS_TPMS.py
+python3 Gateway.py
+
+then the sender socket:
+
+python3 Wheel_sensor_tpms.py
+
+
+
+
+
+   Wheel_sensor_tpms -> ABS_TPMS -> CANBus -> Instrument_cluster
+         
+               
